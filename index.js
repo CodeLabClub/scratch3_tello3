@@ -25,6 +25,7 @@ const menuIconURI = blockIconURI;
 const SCRATCH_EXT_ID = "tello3";
 const NODE_NAME = `node_${SCRATCH_EXT_ID}`;
 const NODE_ID = `eim/${NODE_NAME}`;
+const NODE_MIN_VERSION = "3.0.0";
 const HELP_URL = `https://adapter.codelab.club/extension_guide/${SCRATCH_EXT_ID}/`;
 
 // 翻译
@@ -161,7 +162,7 @@ class AdapterClient {
         );
         let list_timeout = 10000;
         // 生成 UI 类
-        this.ScratchUIHelper = new ScratchUIHelper(SCRATCH_EXT_ID, NODE_NAME, NODE_ID, runtime, this.adapter_base_client, list_timeout);
+        this.ScratchUIHelper = new ScratchUIHelper(SCRATCH_EXT_ID, NODE_NAME, NODE_ID, NODE_MIN_VERSION, runtime, this.adapter_base_client, list_timeout);
     }
 
     emit_with_messageid(NODE_ID, content){
